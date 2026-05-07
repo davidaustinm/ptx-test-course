@@ -1,0 +1,201 @@
+\documentclass[12pt]{article}
+
+\pagestyle{empty}
+\setlength{\topmargin}{0in}
+\setlength{\headheight}{0in}
+\setlength{\topsep}{0in}
+\setlength{\textheight}{9in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+
+\usepackage{palatino,graphics,amsmath,amssymb,enumitem}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vs}[1]{\vspace{#1in}}
+\renewcommand{\vss}[1]{\vspace*{#1in}}
+\newcommand{\bvec}{{\mathbf b}}
+\newcommand{\cvec}{{\mathbf c}}
+\newcommand{\dvec}{{\mathbf d}}
+\newcommand{\evec}{{\mathbf e}}
+\newcommand{\fvec}{{\mathbf f}}
+\newcommand{\qvec}{{\mathbf q}}
+\newcommand{\uvec}{{\mathbf u}}
+\newcommand{\vvec}{{\mathbf v}}
+\newcommand{\wvec}{{\mathbf w}}
+\newcommand{\xvec}{{\mathbf x}}
+\newcommand{\yvec}{{\mathbf y}}
+\newcommand{\zvec}{{\mathbf y}}
+\newcommand{\zerovec}{{\mathbf 0}}
+\newcommand{\real}{{\mathbb R}}
+\newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
+    \end{array}\right]}
+\newcommand{\ctwovec}[2]{\left[\begin{array}{c}#1 \\ #2
+   \end{array}\right]}
+\newcommand{\threevec}[3]{\left[\begin{array}{r}#1 \\ #2 \\ #3
+  \end{array}\right]}
+\newcommand{\cthreevec}[3]{\left[\begin{array}{c}#1 \\ #2 \\ #3
+    \end{array}\right]}
+\newcommand{\fourvec}[4]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\ #4
+    \end{array}\right]}
+\newcommand{\cfourvec}[4]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\ #4
+    \end{array}\right]}
+\newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 \amp #2 \\ #3 \amp #4 \\ \end{array}\right]}
+\renewcommand{\span}[1]{\text{Span}\{#1\}}
+\newcommand{\bcal}{{\cal B}}
+\newcommand{\ccal}{{\cal C}}
+\newcommand{\scal}{{\cal S}}
+\newcommand{\wcal}{{\cal W}}
+\newcommand{\ecal}{{\cal E}}
+\newcommand{\coords}[2]{\left\{#1\right\}_{#2}}
+\newcommand{\gray}[1]{\color{gray}{#1}}
+\newcommand{\lgray}[1]{\color{lightgray}{#1}}
+\newcommand{\rank}{\text{rank}}
+\newcommand{\col}{\text{Col}}
+\newcommand{\nul}{\text{Nul}}
+\newcommand{\laspan}[1]{\text{Span}\{#1\}}
+
+\begin{document}
+
+\noindent
+{\bf Mathematics 204} \\ 
+{\bf Review}
+
+\bigskip
+\begin{enumerate}
+\item Suppose that
+  $$A = \begin{bmatrix}
+    2 & -4 & -1 \\
+    1 & -2 & 3 \\
+    -1 & 2 & 4 \\
+  \end{bmatrix},
+  \hspace*{24pt}
+  \bvec=\threevec077. \hspace*{24pt}
+  $$
+  
+  Write the solution set of the equation $A\xvec = \bvec$ in vector
+  parametric form.
+
+  \vs{1.5}
+  Remember that $\col(A)$ is the subspace that is the span of the
+  columns of $A$.  Find a basis for $\col(A)$ and explain why your set
+  is a basis.
+
+  \vs{1}
+  Is the vector $\bvec$ in $\col(A)$?  If so, write it as a linear
+  combination of basis vectors.
+
+  \vs{1.2}
+  What is the dimension of $\col(A)$ and for which $p$ is
+  $\col(A)$ a subspace of $\real^p$?
+
+  \vs{1.2}
+  Is the matrix $A$ invertible?  Explain your response.
+
+  \vs{1}
+  \newpage
+  If a vector $\bvec$ is in $\col(A)$, what can you say about the set
+  of solutions to the equation $A\xvec = \bvec$?
+
+  \vs{1}
+  
+\item We earlier defined the {\em rank} of a matrix $A$ to be the
+  number of pivot positions in $A$.  
+  Give an example of a $3\times 4$ matrix for which $\rank(A) = 3$.
+  What does this say about the columns of $A$? 
+
+  \vs{1}
+%  If $\rank(A) = 2$, what can you say about $\col(A)$?
+
+  Give an example of a $3\times 4$ matrix whose entries are all
+  nonzero for which $\rank(A)=1$.
+
+  \vs{1}
+
+  Suppose that $A$ is a $10\times15$ matrix.  What is the largest
+  possible value for $\rank(A)$?
+
+  \vs{1}
+  If $\rank(A)$ is this largest possible value, what can you say about
+  $\col(A)$ and what can you say about $\nul(A)$?
+
+  \vs{1}
+  If $B$ is a $12\times10$ matrix, what is the largest possible
+  value of $\rank(B)$?
+
+  \vs{1}
+  \newpage
+  If $\rank(B)$ is this largest possible value, what can you say about
+  $\col(B)$ and what can you say about $\nul(B)$?
+
+  % \vs{1}
+  % If $C$ is a $14\times n$ matrix and $\col(C)=\real^{14}$, what can
+  % you conclude about $n$?
+  \vs{1}
+\item Suppose that $A$ is a $3\times2$ matrix and that
+  $A\twovec10 = \threevec{-2}{1}4$ and $A\twovec01 = \threevec11{-2}$.
+  What is $A\twovec2{-3}$.
+
+  \vs{1}
+  Suppose that $B$ is a $2\times2$ matrix and that
+  $$
+  B\twovec23 = \twovec10,~~~B\twovec11 = \twovec01.
+  $$
+  What is $B^{-1}$?
+
+  \vs{1}
+  Find a solution to the equation $B\xvec=\twovec4{-1}$.
+
+  \vs{1}
+  What is the matrix $B$?
+
+  \vs{1}
+  \newpage
+\item For what values of $k$ is the matrix
+  $\begin{bmatrix}
+    3 & 2 & 0 \\
+    k & -1 & 1 \\
+    1 & 2 & 2 \\
+  \end{bmatrix}$ invertible?
+  
+  \vs{1.5}
+\item What does it mean for $\vvec$ to be an eigenvector of a matrix
+  $A$?
+
+  \vs{1}
+
+  Suppose that $A$ is a $2\times2$ matrix having eigenvectors
+  $\vvec_1 = \twovec21$ and $\vvec_2=\twovec31$ and eigenvalues
+  $\lambda_1=4$ and $\lambda_2=-2$.
+
+  Write the vector $\twovec10$ as a linear combination of
+  eigenvectors.
+
+  \vs{1}
+  Find the vector $A\twovec10$.
+
+  \vs{1}
+  In the same way, write the vector $\twovec01$ as a linear
+  combination of eigenvectors.  Then find the vector $A\twovec01$.
+
+  \vs{1.5}
+  What is the matrix $A$?
+
+  \vs{1}
+  Is $A$ diagonalizable?  If so, find the matrices $P$ and $D$ and
+  verify that $A=PDP^{-1}$.
+    
+  
+  
+
+\end{enumerate}
+\end{document}
+
+
+
+  
+
+
+
+  
+

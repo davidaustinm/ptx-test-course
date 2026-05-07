@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<worksheet>
+  <title>Mathematics 204 Review</title>
+
+  <exercise>
+    <introduction>
+      <p>Suppose that
+        <md>
+          A = \begin{bmatrix}
+            2 &amp; -4 &amp; -1 \\
+            1 &amp; -2 &amp; 3 \\
+            -1 &amp; 2 &amp; 4 \\
+          \end{bmatrix},
+          ~~~
+          \bvec=\threevec077
+        </md>
+      </p>
+    </introduction>
+    <task workspace="1.5in">
+      <p>Write the solution set of the equation <m>A\xvec = \bvec</m> in vector parametric form.</p>
+    </task>
+    <task workspace="1in">
+      <p>Remember that <m>\col(A)</m> is the subspace that is the span of the columns of <m>A</m>. Find a basis for <m>\col(A)</m> and explain why your set is a basis.</p>
+    </task>
+    <task workspace="1.2in">
+      <p>Is the vector <m>\bvec</m> in <m>\col(A)</m>? If so, write it as a linear combination of basis vectors.</p>
+    </task>
+    <task workspace="1.2in">
+      <p>What is the dimension of <m>\col(A)</m> and for which <m>p</m> is <m>\col(A)</m> a subspace of <m>\real^p</m>?</p>
+    </task>
+    <task workspace="1in">
+      <p>Is the matrix <m>A</m> invertible? Explain your response.</p>
+    </task>
+    <task workspace="1in">
+      <p>If a vector <m>\bvec</m> is in <m>\col(A)</m>, what can you say about the set of solutions to the equation <m>A\xvec = \bvec</m>?</p>
+    </task>
+  </exercise>
+
+  <exercise>
+    <introduction>
+      <p>We earlier defined the <em>rank</em> of a matrix <m>A</m> to be the number of pivot positions in <m>A</m>.</p>
+    </introduction>
+    <task workspace="1in">
+      <p>Give an example of a <m>3\times 4</m> matrix for which <m>\rank(A) = 3</m>. What does this say about the columns of <m>A</m>?</p>
+    </task>
+    <task workspace="1in">
+      <p>Give an example of a <m>3\times 4</m> matrix whose entries are all nonzero for which <m>\rank(A)=1</m>.</p>
+    </task>
+    <task workspace="1in">
+      <p>Suppose that <m>A</m> is a <m>10\times15</m> matrix. What is the largest possible value for <m>\rank(A)</m>?</p>
+    </task>
+    <task workspace="1in">
+      <p>If <m>\rank(A)</m> is this largest possible value, what can you say about <m>\col(A)</m> and what can you say about <m>\nul(A)</m>?</p>
+    </task>
+    <task workspace="1in">
+      <p>If <m>B</m> is a <m>12\times10</m> matrix, what is the largest possible value of <m>\rank(B)</m>?</p>
+    </task>
+    <task workspace="1in">
+      <p>If <m>\rank(B)</m> is this largest possible value, what can you say about <m>\col(B)</m> and what can you say about <m>\nul(B)</m>?</p>
+    </task>
+  </exercise>
+
+  <exercise>
+    <introduction>
+      <p>Suppose that <m>A</m> is a <m>3\times2</m> matrix and that <m>A\twovec10 = \threevec{-2}{1}4</m> and <m>A\twovec01 = \threevec11{-2}</m>.</p>
+    </introduction>
+    <task workspace="1in">
+      <p>What is <m>A\twovec2{-3}</m>?</p>
+    </task>
+    <task workspace="1in">
+      <p>Suppose that <m>B</m> is a <m>2\times2</m> matrix and that
+        <md>
+          B\twovec23 = \twovec10,~~~B\twovec11 = \twovec01
+        </md>
+        What is <m>B^{-1}</m>?</p>
+    </task>
+    <task workspace="1in">
+      <p>Find a solution to the equation <m>B\xvec=\twovec4{-1}</m>.</p>
+    </task>
+    <task workspace="1in">
+      <p>What is the matrix <m>B</m>?</p>
+    </task>
+  </exercise>
+
+  <exercise workspace="1.5in">
+    <statement>
+      <p>For what values of <m>k</m> is the matrix
+        <md>
+          \begin{bmatrix}
+            3 &amp; 2 &amp; 0 \\
+            k &amp; -1 &amp; 1 \\
+            1 &amp; 2 &amp; 2 \\
+          \end{bmatrix}
+        </md>
+        invertible?</p>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <task workspace="1in">
+      <p>What does it mean for <m>\vvec</m> to be an eigenvector of a matrix <m>A</m>?</p>
+    </task>
+    <task workspace="1in">
+      <p>Suppose that <m>A</m> is a <m>2\times2</m> matrix having eigenvectors <m>\vvec_1 = \twovec21</m> and <m>\vvec_2=\twovec31</m> and eigenvalues <m>\lambda_1=4</m> and <m>\lambda_2=-2</m>. Write the vector <m>\twovec10</m> as a linear combination of eigenvectors.</p>
+    </task>
+    <task workspace="1in">
+      <p>Find the vector <m>A\twovec10</m>.</p>
+    </task>
+    <task workspace="1.5in">
+      <p>In the same way, write the vector <m>\twovec01</m> as a linear combination of eigenvectors. Then find the vector <m>A\twovec01</m>.</p>
+    </task>
+    <task workspace="1in">
+      <p>What is the matrix <m>A</m>?</p>
+    </task>
+    <task workspace="1in">
+      <p>Is <m>A</m> diagonalizable? If so, find the matrices <m>P</m> and <m>D</m> and verify that <m>A=PDP^{-1}</m>.</p>
+    </task>
+  </exercise>
+
+</worksheet>
