@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<handout>
+<title>Handout Title</title>
+
+  <page>
+    <p workspace="1in">
+      A first paragraph with some space for notes below it.
+    </p>
+
+    <figure xml:id="fig-prefig">
+      <caption>A graph</caption>
+      <image width="60%">
+        <prefigure label="prefig" xmlns="https://prefigure.org">
+          <diagram dimensions="(300, 300)" margins="5">
+            <definition>f(x)=x^2-3</definition>
+            <coordinates bbox="(-4,-4,4,4)">
+              <grid-axes decorations="yes"/>
+              <graph function="f"/>
+            </coordinates>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+
+  </page>
+</handout>
