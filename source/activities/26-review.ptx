@@ -18,7 +18,7 @@
       </p>
     </introduction>
     <task workspace="1.5in">
-      <p>Write the solution set of the equation <m>A\xvec = \bvec</m> in vector parametric form.</p>
+      <p>Write all the solution set of the equation <m>A\xvec = \bvec</m> in vector parametric form.</p>
     </task>
     <task workspace="1in">
       <p>Remember that <m>\col(A)</m> is the subspace that is the span of the columns of <m>A</m>. Find a basis for <m>\col(A)</m> and explain why your set is a basis.</p>
