@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<worksheet>
+  <title>Mathematics 204 Linear independence (Section 2.4)</title>
+
+  <objectives>
+    <introduction>
+      <p>Make sure you can answer the following questions:</p>
+    </introduction>
+    <ul>
+      <li><p>What does it mean for a set of vectors to be linearly dependent or independent?</p></li>
+      <li><p>How do the pivots of a matrix tell us about the linear independence/dependence of its columns?</p></li>
+      <li><p>What is the largest possible number of vectors in a linearly independent set in <m>\real^n</m>?</p></li>
+      <li><p>How do the solutions to the equation <m>A\xvec=\zerovec</m> give information about the linear independence/dependence of the columns of <m>A</m>?</p></li>
+    </ul>
+  </objectives>
+
+  <exercise>
+    <introduction>
+      <p>Consider the matrices
+      <md>
+        A = 
+        \left[
+          \begin{array}{cccc}
+            3 \amp 0 \amp -1 \amp 1 \\
+            1 \amp -1 \amp 3 \amp 7 \\
+            3 \amp -2 \amp 1 \amp 5 \\
+            -1 \amp 2 \amp 2 \amp 3 \\
+          \end{array}
+        \right],\hspace{24pt}
+        B = 
+        \left[
+          \begin{array}{cccc}
+            3 \amp 0 \amp -1 \amp 4 \\
+            1 \amp -1 \amp 3 \amp -1 \\
+            3 \amp -2 \amp 1 \amp 3 \\
+            -1 \amp 2 \amp 2 \amp 1 \\
+          \end{array}
+        \right].
+      </md></p>
+    </introduction>
+    <task workspace="1.5in">
+      <p>Are the columns of <m>A</m> linearly independent? Are the columns of <m>B</m> linearly independent? Explain your thinking.</p>
+    </task>
+    <task workspace="1.25in">
+      <p>For the matrix above whose columns are linearly dependent, express one of the vectors as a linear combination of the others.</p>
+    </task>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>Are the three vectors below linearly independent or dependent? Explain your thinking.</p>
+      <image width="40%">
+        <prefigure xmlns="https://prefigure.org" label="prefig-three-vectors">
+            <diagram dimensions="(300, 300)" margins="5">
+                <coordinates bbox="(-4,-4,4,4)">
+                <definition>v1=(2,1)</definition>
+                <definition>v2=(-2,1)</definition>
+                <definition>v3=(-2,-3)</definition>
+                <grid-axes/>
+                <vector v="v1" stroke="blue" thickness="3"/>
+                <vector v="v2" stroke="blue" thickness="3"/>
+                <vector v="v3" stroke="blue" thickness="3"/>
+                </coordinates>
+            </diagram>
+        </prefigure>
+    </image>
+        
+    </statement>
+  </exercise>
+
+  <exercise>
+    <introduction>
+      <p>If <m>\vvec_1,\vvec_2,\vvec_3</m> is a set of vectors in <m>\real^5</m>, what is the shape of the matrix <m>\begin{bmatrix}\vvec_1 \amp \vvec_2 \amp \vvec_3 \end{bmatrix}</m> (that is, how many rows and columns)? If the set of vectors is linearly independent, what can you say about the pivot positions?</p>
+    </introduction>
+    <task workspace="1.5in">
+      <p>Explain why seven vectors in <m>\real^5</m> cannot be linearly independent.</p>
+    </task>
+    <task workspace="1.25in">
+      <p>What is the largest number of vectors in <m>\real^5</m> that can be linearly independent?</p>
+    </task>
+    <task workspace="1.25in">
+      <p>If you have three vectors in <m>\real^5</m>, can you guarantee that they are linearly independent?</p>
+    </task>
+  </exercise>
+
+  <exercise>
+    <introduction>
+      <p>If <m>A</m> is a matrix, we call the equation <m>A\xvec=\zerovec</m> a <em>homogeneous equation</em> since the right hand side is the zero vector. Explain why this equation is always consistent.</p>
+    </introduction>
+    <task workspace="1in">
+      <p>Suppose that
+      <md>
+        A = 
+        \begin{bmatrix}
+          3 \amp 0 \amp -1 \amp 4 \\
+          1 \amp -1 \amp 3 \amp -3 \\
+          3 \amp -2 \amp 1 \amp 0 \\
+          -1 \amp 2 \amp 2 \amp -1
+        \end{bmatrix}
+      </md>
+      Write the solutions to the equation <m>A\xvec=\zerovec</m> in vector-parametric form.</p>
+    </task>
+    <task workspace="2in">
+      <p>If the columns of <m>A</m> are <m>\vvec_1</m>, <m>\vvec_2</m>, <m>\vvec_3</m>, and <m>\vvec_4</m>, use your solution to this homogeneous equation to find one set of weights such that
+      <md>
+        c_1\vvec_1+c_2\vvec_2+c_3\vvec_3+c_4\vvec_4 = \zerovec
+      </md>
+      where at least one of the weights is nonzero.</p>
+    </task>
+    <task workspace="1.25in">
+      <p>Use this expression to rewrite <m>\vvec_4</m> as a linear combination of the others.</p>
+    </task>
+    <task workspace="1.25in">
+      <p>Is the set of vectors <m>\vvec_1</m>, <m>\vvec_2</m>, <m>\vvec_3</m>, <m>\vvec_4</m> linearly dependent or independent?</p>
+    </task>
+  </exercise>
+
+  <exercise>
+    <introduction>
+      <p>Suppose that <m>\wvec_1</m>, <m>\wvec_2</m>, and <m>\wvec_3</m> are the columns of a matrix <m>B</m> and that
+      <md>
+        \wvec_3 = 2\wvec_1 - 3\wvec_2.
+      </md>
+      </p>
+    </introduction>
+    <task workspace="1in">
+      <p>Is this set of vectors linearly dependent or independent?</p>
+    </task>
+    <task workspace="1in">
+      <p>Explain why we can find a set of weights <m>c_1</m>, <m>c_2</m>, and <m>c_3</m>, not all of which are zero, for which
+      <md>
+        c_1\wvec_1+c_2\wvec_2 + c_3\wvec_3 = \zerovec.
+      </md>
+      </p>
+    </task>
+    <task workspace="1in">
+      <p>Explain why there are infinitely many solutions to the homogeneous equation <m>B\xvec=\zerovec</m>.</p>
+    </task>
+    <task workspace="1in">
+      <p>What does this say about the pivot positions of <m>B</m>?</p>
+    </task>
+  </exercise>
+
+  <exercise>
+    <introduction>
+      <p>Suppose that <m>\vvec_1, \vvec_2, \ldots, \vvec_n</m> are vectors in <m>\real^{24}</m> that are linearly independent and that span <m>\real^{24}</m>. What can you say about the pivot positions of the matrix <m>A</m> whose columns are <m>\vvec_1, \vvec_2, \ldots, \vvec_n</m>?</p>
+    </introduction>
+    <task workspace="1in">
+      <p>How many vectors are there in this set?</p>
+    </task>
+    <task workspace="1in">
+      <p>Suppose that <m>\bvec</m> is a vector in <m>\real^{24}</m>. Explain how you know that <m>\bvec</m> can be written as a linear combination of <m>\vvec_1,\vvec_2, \ldots,\vvec_n</m>.</p>
+    </task>
+    <task workspace="1in">
+      <p>Suppose that <m>\bvec</m> is a vector in <m>\real^{24}</m>. Explain how you know that <m>\bvec</m> can be written as a linear combination of <m>\vvec_1,\vvec_2, \ldots,\vvec_n</m> in exactly one way.</p>
+    </task>
+  </exercise>
+
+  <exercise workspace="1in">
+    <introduction>
+      <p>Suppose that <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m> are a set of vectors and that <m>\vvec_3</m> is a scalar multiple of <m>\vvec_7</m>. What can you say about the linear independence/dependence of this set of vectors?</p>
+    </introduction>
+    <statement>
+      <p>If <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m> is a linearly independent set of vectors, is it necessarily true that one vector is a scalar multiple of another one?</p>
+    </statement>
+  </exercise>
+
+  <exercise workspace="1in">
+    <introduction>
+      <p>Suppose that <m>A</m> is a matrix such that the equation <m>A\xvec=\bvec</m> has exactly one solution for every vector <m>\bvec</m>. What can you say about the linear dependence/independence of the columns of <m>A</m>?</p>
+    </introduction>
+    <statement>
+      <p>What can you say about the span of the columns of <m>A</m>?</p>
+    </statement>
+  </exercise>
+
+</worksheet>

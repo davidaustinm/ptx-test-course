@@ -1,0 +1,272 @@
+\documentclass[12pt]{article}
+
+\pagestyle{empty}
+\setlength{\topmargin}{0in}
+\setlength{\headheight}{0in}
+\setlength{\topsep}{0in}
+\setlength{\textheight}{9in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+
+\usepackage{palatino,graphics,amsmath,tcolorbox,amssymb}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vs}[1]{\vspace{#1in}}
+\renewcommand{\vss}[1]{\vspace*{#1in}}
+\newcommand{\bvec}{{\mathbf b}}
+\newcommand{\cvec}{{\mathbf c}}
+\newcommand{\dvec}{{\mathbf d}}
+\newcommand{\evec}{{\mathbf e}}
+\newcommand{\fvec}{{\mathbf f}}
+\newcommand{\qvec}{{\mathbf q}}
+\newcommand{\uvec}{{\mathbf u}}
+\newcommand{\vvec}{{\mathbf v}}
+\newcommand{\wvec}{{\mathbf w}}
+\newcommand{\xvec}{{\mathbf x}}
+\newcommand{\yvec}{{\mathbf y}}
+\newcommand{\zvec}{{\mathbf y}}
+\newcommand{\zerovec}{{\mathbf 0}}
+\newcommand{\s}{\phantom{-}}
+\newcommand{\real}{{\mathbb R}}
+\newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
+    \end{array}\right]}
+\newcommand{\ctwovec}[2]{\left[\begin{array}{c}#1 \\ #2
+   \end{array}\right]}
+\newcommand{\threevec}[3]{\left[\begin{array}{r}#1 \\ #2 \\ #3
+  \end{array}\right]}
+\newcommand{\cthreevec}[3]{\left[\begin{array}{c}#1 \\ #2 \\ #3
+    \end{array}\right]}
+\newcommand{\fourvec}[4]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\ #4
+    \end{array}\right]}
+\newcommand{\cfourvec}[4]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\ #4
+    \end{array}\right]}
+\newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 \amp #2 \\ #3 \amp #4 \\ \end{array}\right]}
+\newcommand{\laspan}{\text{Span}}
+
+\begin{document}
+
+\noindent
+{\bf Mathematics 204} \\ 
+{\bf Linear independence (Section 2.4)}
+
+\bigskip
+\begin{enumerate}
+\item Consider the matrices 
+  $$
+  A = 
+  \left[
+    \begin{array}{cccc}
+      3 & 0 & -1 & 1 \\
+      1 & -1 & 3 & 7 \\
+      3 & -2 & 1 & 5 \\
+      -1 & 2 & 2 & 3 \\
+    \end{array}
+  \right],\hspace*{24pt}
+  B = 
+  \left[
+    \begin{array}{cccc}
+      3 & 0 & -1 & 4 \\
+      1 & -1 & 3 & -1 \\
+      3 & -2 & 1 & 3 \\
+      -1 & 2 & 2 & 1 \\
+    \end{array}
+  \right].
+  $$
+
+  Are the columns of $A$ linearly independent?  Are the columns
+  of $B$ linearly independent?   Explain your thinking.
+  
+  \vs{1.5}
+  For the matrix above whose columns are linearly dependent,
+  express one of the vectors as a linear combination of the others.
+
+  \vs{1.25}
+\item Are the three vectors below linearly independent or dependent?
+  Explain your thinking.
+
+  \includegraphics[scale=0.7]{figures/lin-dep.pdf}
+
+% \item  Suppose that $\vvec_1$, $\vvec_2$, $\vvec_3$, and $\vvec_4$ are
+%   vectors in $\real^8$ and that $\vvec_2=\zerovec$.  What can you say
+%   about the linear dependence/independence of this set of
+%   four vectors in $\real^8$?
+  
+%   \vs{1}
+%   If the vectors are linearly dependent, express one of them as a
+%   linear combination of the others.
+  
+\vs{1}
+
+\item If $\vvec_1,\vvec_2,\vvec_3$ is a set of vectors in
+  $\real^5$, what is the shape of the matrix
+  $\begin{bmatrix}\vvec_1 & \vvec_2 & \vvec_3 \end{bmatrix}$ (that is,
+  how many rows and columns)?  If the set of vectors is linearly
+  independent, what can you say about the pivot positions?
+
+  \vs{1.5}
+  
+  Explain why seven vectors in $\real^5$ cannot be linearly
+  independent.
+
+  \vs{1.25}
+  What is the largest number of vectors in $\real^5$ that can be
+  linearly independent?
+
+  \vs{1.25}
+  If you have three vectors in $\real^5$, can you guarantee that they
+  are linearly independent?
+
+  \vs{1}
+\item If $A$ is a matrix, we call the equation $A\xvec=\zerovec$ a
+  {\em homogeneous equation} since the right hand side is the zero
+  vector.  Explain why this equation is always consistent.
+
+  \vs{1}
+  \newpage
+  Suppose that 
+  $
+  A = 
+  \begin{bmatrix}
+    3 & 0 & -1 & 4 \\
+    1 & -1 & 3 & -3 \\
+    3 & -2 & 1 & 0 \\
+    -1 & 2 & 2 & -1
+  \end{bmatrix}
+  $.  Write the solutions to the equation $A\xvec=\zerovec$ in
+  vector-parametric form.
+
+  \vs{2}
+  If the columns of $A$ are $\vvec_1$, $\vvec_2$, $\vvec_3$, and
+  $\vvec_4$, use your solution to this homogeneous equation to find
+  one set of weights such that
+  $$
+  c_1\vvec_1+c_2\vvec_2+c_3\vvec_3+c_4\vvec_4 = \zerovec
+  $$
+  where at least one of the weights is nonzero.
+
+  \vs{1.25}
+  Use this expression to rewrite $\vvec_4$ as a linear combination of
+  the others.
+
+  \vs{1.25}
+  Is the set of vectors $\vvec_1$, $\vvec_2$, $\vvec_3$, $\vvec_4$
+  linearly dependent or independent?
+
+  \vs{1.25}
+  \newpage
+\item Suppose that $\wvec_1$, $\wvec_2$, and $\wvec_3$ are the columns
+  of a matrix $B$ and that
+  $$
+  \wvec_3 = 2\wvec_1 - 3\wvec_2.
+  $$
+  Is this set of vectors linearly dependent or independent?
+
+  \vs{1}
+  Explain why we can find a set of weights $c_1$, $c_2$, and $c_3$,
+  not all of which are zero, for which
+  $$
+  c_1\wvec_1+c_2\wvec_2 + c_3\wvec_3 = \zerovec.
+  $$
+
+  \vs{1}
+  Explain why there are infinitely many solutions to the homogeneous
+  equation $B\xvec=\zerovec$.
+
+  \vs{1}
+  What does this say about the pivot positions of $B$?
+
+  \vs{1}
+
+\item Suppose that $\vvec_1, \vvec_2, \ldots, \vvec_n$ are vectors in
+  $\real^{24}$ that are linearly independent and that span $\real^{24}$.
+  What can you say about the pivot positions of the matrix $A$ whose
+  columns are $\vvec_1, \vvec_2, \ldots, \vvec_n$?
+
+  \vs{1}
+  How many vectors are there in this set?
+
+  \vs{1}
+  Suppose that $\bvec$ is a vector in $\real^{24}$.  Explain how you
+  know that $\bvec$ can be written as a linear combination of
+  $\vvec_1,\vvec_2, \ldots,\vvec_n$.
+
+  \vs{1}
+  Suppose that $\bvec$ is a vector in $\real^{24}$.  Explain how you
+  know that $\bvec$ can be written as a linear combination of
+  $\vvec_1,\vvec_2, \ldots,\vvec_n$ in exactly one way.
+
+  \vs{1}
+%  What can you say about the solution to the homogeneous equation
+%  $A\xvec = \zerovec$?
+%  
+%  \vs{1}
+\item Suppose that $\vvec_1,\vvec_2,\ldots,\vvec_n$ are a set of
+  vectors and that $\vvec_3$ is a scalar multiple of $\vvec_7$.  What
+  can you say about the linear independence/dependence of this set of
+  vectors?
+
+  \vs{1}
+  If $\vvec_1,\vvec_2,\ldots,\vvec_n$ is a linearly independent set of
+  vectors, is it necessarily true that one vector is a scalar multiple
+  of another one?
+
+  \vs{1}
+\item Suppose that $A$ is a matrix such that the equation
+  $A\xvec=\bvec$ has exactly one solution for every vector $\bvec$.
+  What can you say about the linear dependence/independence of the
+  columns of $A$?
+
+  \vs{1}
+  What can you say about the span of the columns of $A$?
+
+  \vs{1}
+  \begin{tcolorbox}
+    Make sure you can answer the following questions:
+    \begin{itemize}
+    \item What does it mean for a set of vectors to be linearly
+      dependent or independent?
+    \item How do the pivots of a matrix tell us about the linear
+      independence/dependence of its columns?
+    \item What is the largest possible number of vectors in a linearly
+      independent set in $\real^n$?
+    \item How do the solutions to the equation $A\xvec=\zerovec$ give
+      information about the linear independence/dependence of the
+      columns of $A$?
+    \end{itemize}
+  \end{tcolorbox}
+  
+  
+
+\end{enumerate}
+\end{document}
+
+  \newpage
+\item Suppose you have an $m\times n$ matrix $A$ whose columns span
+  $\real^m$.  What can you say about the pivot positions of $A$?
+
+  \vs{1}
+  If $\bvec$ is a vector in $\real^m$, what can you say about the
+  solutions to $A\xvec = \bvec$?
+
+  \vs{1}
+  What can you say about the number of columns of $A$?
+
+  \vs{1}
+\item Suppose you have an $m\times n$ matrix $A$ whose columns are
+  linearly independent.  What can you say about the pivot positions of
+  $A$? 
+
+  \vs{1}
+  What can you say about the
+  solutions to $A\xvec = \zerovec$?
+
+  \vs{1}
+  What can you say about the number of columns of $A$?
+
+  \vs{1}
+  
+\end{enumerate}
+  \vs{1}
+\end{document}
+

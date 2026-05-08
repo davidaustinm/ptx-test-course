@@ -1,0 +1,213 @@
+\documentclass[12pt]{article}
+
+\pagestyle{empty}
+\setlength{\topmargin}{-0.4in}
+\setlength{\headheight}{0in}
+\setlength{\topsep}{0in}
+\setlength{\textheight}{9.4in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.6in}
+
+\renewcommand{\vss}[1]{\vspace*{#1in}}
+\newcommand{\bvec}{{\mathbf b}}
+\newcommand{\cvec}{{\mathbf c}}
+\newcommand{\dvec}{{\mathbf d}}
+\newcommand{\evec}{{\mathbf e}}
+\newcommand{\fvec}{{\mathbf f}}
+\newcommand{\qvec}{{\mathbf q}}
+\newcommand{\rvec}{{\mathbf r}}
+
+\newcommand{\uvec}{{\mathbf u}}
+\newcommand{\vvec}{{\mathbf v}}
+\newcommand{\wvec}{{\mathbf w}}
+\newcommand{\xvec}{{\mathbf x}}
+\newcommand{\yvec}{{\mathbf y}}
+\newcommand{\zvec}{{\mathbf z}}
+\newcommand{\zerovec}{{\mathbf 0}}
+\newcommand{\real}{{\mathbb R}}
+\newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
+    \end{array}\right]}
+\newcommand{\ctwovec}[2]{\left[\begin{array}{c}#1 \\ #2
+   \end{array}\right]}
+\newcommand{\threevec}[3]{\left[\begin{array}{r}#1 \\ #2 \\ #3
+  \end{array}\right]}
+\newcommand{\cthreevec}[3]{\left[\begin{array}{c}#1 \\ #2 \\ #3
+    \end{array}\right]}
+\newcommand{\fourvec}[4]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\ #4
+    \end{array}\right]}
+\newcommand{\cfourvec}[4]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\ #4
+    \end{array}\right]}
+\newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 & #2 \\ #3 & #4 \\ \end{array}\right]}
+\newcommand{\matthree}[9]{\left[\begin{array}{rrr}#1 & #2 & #3 \\ #4 & #5 &#6 \\ #7 & #8 & #9 \\ \end{array}\right]}
+\newcommand{\diag}[3]{\left[\begin{array}{rrr}#1 & 0 & 0 \\ 0 & #2 &0 \\ 0 & 0 & #3 \\ \end{array}\right]}
+
+\renewcommand{\span}[1]{\text{Span}\{#1\}}
+\newcommand{\bcal}{{\cal B}}
+\newcommand{\ccal}{{\cal C}}
+\newcommand{\scal}{{\cal S}}
+\newcommand{\wcal}{{\cal W}}
+\newcommand{\ecal}{{\cal E}}
+\newcommand{\coords}[2]{\left\{#1\right\}_{#2}}
+\newcommand{\gray}[1]{\color{gray}{#1}}
+\newcommand{\lgray}[1]{\color{lightgray}{#1}}
+\newcommand{\rank}{\text{rank}}
+\newcommand{\col}{\text{Col}}
+\newcommand{\nul}{\text{Nul}}
+\newcommand{\s}{\phantom{-}}
+
+\usepackage{amssymb}
+\usepackage{url}
+
+\usepackage{palatino,graphics,amsmath,graphicx,tcolorbox}
+
+\newcommand{\ds}{\displaystyle}
+\begin{document}
+
+\noindent
+{\bf 21 - Singular Value Decomposition (Section 7.4)} \hfill {\bf MTH 205} 
+
+\bigskip
+
+\noindent There will always be a page of Sage cells at \url{gvsu.edu/s/0Ng}.
+
+\bigskip
+
+Given any matrix $A$, we now want to study the function $f(\xvec) = |A\xvec|$, which is not a
+quadratic form. For example, if $A=\mattwo{2}{0}{0}{-1}$ then $f\left(\twovec{x_1}{x_2}\right)=\sqrt{4x_1^2+x_2^2}$. 
+
+While $f(x)$ is not a quadratic form, it becomes one if we square it!  That is, 
+$$(f(\xvec))^2 = |A\xvec|^2 = (A\xvec)\cdot (A\xvec) = \xvec \cdot (A^TA\xvec) = q_{A^TA}(\xvec).$$
+
+\noindent Let $G = A^TA$; we call $G$ the "Gram matrix" associated with $A$.  Note that $f(\xvec) = \sqrt{q_G(\xvec)}$.
+\bigskip
+
+You will find a figure at \url{gvsu.edu/s/0YE} ("zero Y E") that allows you to select a matrix
+$A$ and vary the red vector $\xvec$ on the left. You will see the vector $A\xvec$ on the right. The height
+of the blue rectangle shows you the value of $f(\xvec) = |A\xvec|$.
+
+\begin{enumerate}
+    \item Let’s start with $A =\mattwo{1}{2}{-2}{-1}$, which is NOT symmetric. 
+
+\begin{enumerate}
+    \item The first {\bf{singular value}} $\sigma_1$
+ is the maximum value of $f(\xvec)$
+ over all unit vectors and an associated {\bf{right singular vector}} $\vvec_1$
+ is a unit vector describing a direction in which this maximum occurs.
+Use the diagram to find the first singular value $\sigma_1$
+ and an associated right singular vector $\vvec_1$.
+    \vfill
+
+    \item The second {\bf{singular value}} $\sigma_2$
+ is the minimum value of $f(\xvec)$
+ over all unit vectors and an associated {\bf{right singular vector}} $\vvec_2$
+ is a unit vector describing a direction in which this minimum occurs.
+Use the diagram to find the second singular value $\sigma_2$
+ and an associated right singular vector $\vvec_2$.
+\vfill
+
+\item Without using the diagram:  Remember $f(\xvec) = \sqrt{q_G(\xvec)}$ with $G=A^TA$.  Since $G$ is symmetric, it is orthogonally diagonalizable.  Find $G$ and an orthogonal diagonalization of it.
+\vfill
+\vfill
+\newpage
+\item What is the maximum value of the quadratic form $q_G(\xvec)$
+ among all unit vectors and in which direction does it occur? What is the minimum value of $q_G(\xvec)$
+ and in which direction does it occur?
+\vfill
+
+\item What is the relationship between the eigenvalues of $G$ and the singular values of $A$?  (Recall $f(\xvec)=\sqrt{q_G(\xvec)}$.)
+
+\vfill
+\item What is the relationship between the eigenvectors of the symmetric matrix $G$ and the right singular vectors $\vvec_1$ and $\vvec_2$ of $A$?  
+\vfill
+\item Can we form an orthonormal basis from $\vvec_1$ and $\vvec_2$?  How do we know? (Recall, $G$ is symmetric...)
+\vfill 
+\item Let's introduce something new.  We have $\vvec_1$ and $\vvec_2$ which are the {\bf{right singular vectors}}.  The {\bf{left singular vectors}} $\uvec_1$ and $\uvec_2$ are found from $A\vvec_1 = \sigma_1\uvec_1$ and $A\vvec_2 = \sigma_2\uvec_2$. (That is, they are unit vectors that point in the direction $A\vvec_i$) Find the two left singular vectors, $\uvec_1$ and $\uvec_2$.
+\vfill
+\item Why are $\uvec_1$ and $\uvec_2$ unit vectors?  Hint: we know $f(\vvec_i)=|A\vvec_i| = \sigma_i$.
+\vfill
+\newpage
+\item Form the matrices:
+$$U = \left[ \uvec_1 \ \ \uvec_2\right], \ \ \ \Sigma = \mattwo{\sigma_1}{0}{0}{\sigma_2}, \ \ \ V = \left[\vvec_1 \ \ \vvec_2\right]$$
+\vfill
+\item Explain why $AV = U\Sigma$.  ($\Sigma$ is the Greek letter "Sigma").
+\vfill
+
+\item Is $V$ an orthogonal matrix (i.e. does it have orthonormal columns)? Then what is the relationship between $V^T$ and $V^{-1}$?
+\vspace{2cm}
+ 
+\item Explain why this leads to $A=U\Sigma V^T$, and verify this relationship holds for this example.
+\vfill
+
+\end{enumerate}
+
+Putting all this together, we have  {\bf{singular value decomposition}} of a matrix $A$:
+\begin{itemize}
+    \item Construct the Gram matrix $G=A^TA$, and find an orthogonal diagonalization to find eigenvalues $\lambda_i$ with corresponding orthonormal basis of eigenvectors $\vvec_i$.
+    \item The singular values of $A$ are $\sigma_i = \sqrt{\lambda_i}$.  By convention, they are listed in decreasing order:  $\sigma_1 \ge \sigma_2 \ge \ldots$.  The right singular vectors are the $\vvec_i$.
+    \item The left singular vectors $\uvec_i$ are found from $A\vvec_i = \sigma_i\uvec_i$, where $\uvec_i$ are also unit vectors.  (They also form an orthonormal basis!)  
+\end{itemize}
+
+\item Consider $A = \left[\begin{array}{rrr}
+     1&0&-1  \\
+     1&1&1 
+\end{array}\right]$.  (Not square!  No eigenvalues!)
+\begin{enumerate}
+    \item Construct the Gram matrix $G=A^TA$ and find it's orthogonal diagonalization.
+    \vfill
+
+
+    \newpage
+    \item In building the singular value decomposition, the matrices $U$ and $V$ will always be
+orthogonal matrices so they must be square. The matrix $\Sigma$ will always have the
+same shape as $A$; in this case, $\Sigma$ will be $2\times 3$. Find the singular values $\sigma_1$ and $\sigma_2$ of
+$A$ and form $\Sigma = \left[\begin{array}{rrr}
+     \sigma_1&0&0  \\
+     0&\sigma_2&0 
+\end{array}\right]$.
+\vfill
+\item Identify three right singular vectors $\vvec_1$, $\vvec_2$, and $\vvec_3$ and form the matrix $V$ having
+these vectors as its columns.
+\vfill
+\item We now need to form the left singular vectors. If we want $A = U\Sigma V^T$, then the
+matrix product $U\Sigma$ needs to make sense. This means that the number of columns of
+$U$ equals the number of rows of $\Sigma$, which is 2. Therefore $U$ should be a $2\times 2$ matrix.
+Find left singular vectors using $A\vvec_i = \sigma_i\uvec_i$.
+\vfill
+\item Form the matrix $U =\left[\uvec_1 \ \  \uvec_2\right]$. Then verify that $A=U\Sigma V^T$.
+
+\vfill
+
+\item How can you use this singular value decomposition of $A$
+ to easily find a singular value decomposition of $A^T=\left[\begin{array}{rr}
+      1&1  \\
+      0&1\\ -1&1 
+ \end{array}\right]$.
+ \vfill
+\end{enumerate}
+\newpage
+
+\item (If time): Find the singular value decomposition for $A=\left[\begin{array}{rrr}
+     2&-2&1  \\
+     -4&-8 &-8
+\end{array}\right]$ and verify that $A=U\Sigma V^T$.
+
+
+
+\end{enumerate}
+
+\vfill
+
+
+\begin{tcolorbox}
+Make sure you can answer the following:
+\begin{itemize}
+\item How are the singular values of $A$ related to the eigenvalues of $G=A^TA$?  How are the right singular vectors of $A$ related to the eigenvectors of $G$.
+\item How can you find the left singular vectors of $A$?
+\item How can you build the singular value decompostition for any matrix $A$?
+\end{itemize}
+
+\end{tcolorbox}
+
+    
+\end{document}
