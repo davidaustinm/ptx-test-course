@@ -56,6 +56,9 @@
 \newcommand{\col}{\text{Col}}
 \newcommand{\nul}{\text{Nul}}
 \newcommand{\laspan}[1]{\text{Span}\{#1\}}
+\newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 \amp #2 \\ #3 \amp #4 \\ \end{array}\right]}
+\newcommand{\matthree}[9]{\left[\begin{array}{rrr}#1 \amp #2 \amp #3 \\ #4 \amp #5 \amp#6 \\ #7 \amp #8 \amp #9 \\ \end{array}\right]}
+
   </macros>
 
   <!-- If you put any latex-image elements you can include preambles -->
