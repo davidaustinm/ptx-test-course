@@ -1,0 +1,132 @@
+\documentclass[12pt]{article}
+
+\pagestyle{empty}
+\setlength{\topmargin}{0in}
+\setlength{\headheight}{0in}
+\setlength{\topsep}{0in}
+\setlength{\textheight}{9in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+
+\usepackage{palatino, graphicx}
+
+\newcommand{\real}{{\bf R}}
+\newcommand{\vs}[1]{\vspace{#1in}}
+
+\begin{document}
+
+\noindent
+{\bf Mathematics 202} \\ 
+{\bf Working with mass}
+\bigskip
+
+\begin{enumerate}
+\item Suppose that we have a thin beam laid out horizontally on the
+  $x$-axis, like the one shown below, and that the density is
+  constantly $\rho = 3$ grams per 
+  centimeter and that the beam is 10 centimeters long.  What is the
+  mass of the beam?  What is the general recipe for finding the mass
+  if you know the length and the density?
+
+  \includegraphics{figures/19-beam.eps}
+
+  \vs{0.5}
+  Suppose now that the beam is composed of a material whose density 
+  varies from left to right.  This means that the density depends on
+  $x$, and we have $\rho(x)=x+3$ where the beam is between $0\leq
+  x\leq 10$.  If we take a slice of the beam at position $x$ and width
+  $dx$, as shown below, what is the amount of mass $dm$ in the slice?
+
+  \includegraphics{figures/19-beamslice.eps}
+
+  \vs{0.5}
+  Now that we know the mass of each slice, how may we find the total
+  mass?  What is the total mass of this beam?
+
+  \vs{1}
+\item Suppose that our beam has density $\rho(x) = e^{-x/10}$ where
+  $0\leq x \leq 10$.  What is the mass of the beam?
+
+  \vs{1}
+  \newpage
+\item Let's now look at a two-dimensional example and suppose that we
+  have manufactured a triangular plate shown below on the left.  The
+  density of the material varies from left to right as $\rho(x) = x$
+  grams per square centimeter.
+  \begin{center}
+    \includegraphics{figures/19-plate.eps} \hspace*{0.5in}
+    \includegraphics{figures/19-plateslice.eps} \\
+  \end{center}
+  Suppose we take a vertical slice of width $dx$ as shown on the
+  right.  What is the area $dA$ of this slice?  What is its mass?
+
+  \vs{1}
+  What is the total mass of the plate?
+
+  \vs{1}
+\item Suppose we make a bowl by spinning the portion of the graph of
+  the function $y=x^2/4$, where $0\leq x \leq 4$ about the $y$-axis.
+  Find the volume $dV$ of a horizontal slice of thickiness $dy$ and use
+  this to find the total volume of the bowl.
+
+  \includegraphics{figures/19-solid.eps}
+
+  \newpage
+  Suppose that we fill the bowl with a liquid
+  and that some sediments in the liquid settle out over time so that
+  the density is given by $\rho(y) = 8-y$ grams per unit volume.
+  Since you know $dV$, the volume of a horiztonal slice, what
+  is the mass of a horizontal slice of the liquid?
+
+  \vs{1}
+  What is the total mass of the liquid in the bowl?
+
+  \vs{1}
+  What is the average density of the liquid?
+
+  \vs{1}
+  Now suppose that we scoop off the top of the liquid removing half of
+  its volume.  What is the depth of the liquid now?
+
+  \vs{2}
+  What is the mass of the remaining liquid?
+
+\end{enumerate}
+\end{document}
+
+  
+\item Suppose that we construct a solid by spinning the portion of the
+  graph of $y=1/\sqrt{x}$ between $1\leq x \leq L$ about the
+  $x$-axis.  What is the volume of a vertical slice of thickness $dx$?
+
+  \vs{1}
+  What is the total volume of the solid?
+
+  \vs{1}
+  What happens to the volume as $L\to\infty$?
+
+  \vs{1}
+  Suppose that the density of the solid is $\rho(x) = 1/x$ grams per
+  cubic centimeter.  What is the mass of a vertical slice of thickness
+  $dx$?
+
+  \vs{1}
+  What is the mass of the solid?
+
+  \vs{1}
+  What happens to the mass as $L\to\infty$?
+
+  \vs{1}
+  After we have let $L\to\infty$, suppose we want to cut the solid
+  into two pieces, each of which have the same amount of mass.  Where
+  should we cut the solid?
+
+  
+
+\end{enumerate}
+
+\end{document}
+
+
+

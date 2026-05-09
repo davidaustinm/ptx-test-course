@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<worksheet>
+  <title>Working with mass</title>
+
+  <exercise>
+    <task workspace="0.5in">
+      <statement>
+        <p>Suppose that we have a thin beam laid out horizontally on the
+  <m>x</m>-axis, like the one shown below, and that the density is
+  constantly <m>\rho = 3</m> grams per 
+  centimeter and that the beam is 10 centimeters long.  What is the
+  mass of the beam?  What is the general recipe for finding the mass
+  if you know the length and the density?</p>
+        <p><image source="figures/19-beam.eps"/></p>
+      </statement>
+    </task>
+    <task workspace="0.5in">
+      <statement>
+        <p>Suppose now that the beam is composed of a material whose density 
+  varies from left to right.  This means that the density depends on
+  <m>x</m>, and we have <m>\rho(x)=x+3</m> where the beam is between <m>0\leq
+  x\leq 10</m>.  If we take a slice of the beam at position <m>x</m> and width
+  <m>dx</m>, as shown below, what is the amount of mass <m>dm</m> in the slice?</p>
+        <p><image source="figures/19-beamslice.eps"/></p>
+      </statement>
+    </task>
+    <task workspace="1in">
+      <statement>
+        <p>Now that we know the mass of each slice, how may we find the total
+  mass?  What is the total mass of this beam?</p>
+      </statement>
+    </task>
+  </exercise>
+
+  <exercise workspace="1in">
+    <statement>
+      <p>Suppose that our beam has density <m>\rho(x) = e^{-x/10}</m> where
+  <m>0\leq x \leq 10</m>.  What is the mass of the beam?</p>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <task workspace="1in">
+      <statement>
+        <p>Let's now look at a two-dimensional example and suppose that we
+  have manufactured a triangular plate shown below on the left.  The
+  density of the material varies from left to right as <m>\rho(x) = x</m>
+  grams per square centimeter.</p>
+        <p><image source="figures/19-plate.eps"/> 
+    <image source="figures/19-plateslice.eps"/></p>
+        <p>Suppose we take a vertical slice of width <m>dx</m> as shown on the
+  right.  What is the area <m>dA</m> of this slice?  What is its mass?</p>
+      </statement>
+    </task>
+    <task workspace="1in">
+      <statement>
+        <p>What is the total mass of the plate?</p>
+      </statement>
+    </task>
+  </exercise>
+
+  <exercise>
+    <task workspace="1in">
+      <statement>
+        <p>Suppose we make a bowl by spinning the portion of the graph of
+  the function <m>y=x^2/4</m>, where <m>0\leq x \leq 4</m> about the <m>y</m>-axis.
+  Find the volume <m>dV</m> of a horizontal slice of thickiness <m>dy</m> and use
+  this to find the total volume of the bowl.</p>
+        <p><image source="figures/19-solid.eps"/></p>
+        <p>Suppose that we fill the bowl with a liquid
+  and that some sediments in the liquid settle out over time so that
+  the density is given by <m>\rho(y) = 8-y</m> grams per unit volume.
+  Since you know <m>dV</m>, the volume of a horiztonal slice, what
+  is the mass of a horizontal slice of the liquid?</p>
+      </statement>
+    </task>
+    <task workspace="1in">
+      <statement>
+        <p>What is the total mass of the liquid in the bowl?</p>
+      </statement>
+    </task>
+    <task workspace="1in">
+      <statement>
+        <p>What is the average density of the liquid?</p>
+      </statement>
+    </task>
+    <task workspace="2in">
+      <statement>
+        <p>Now suppose that we scoop off the top of the liquid removing half of
+  its volume.  What is the depth of the liquid now?</p>
+      </statement>
+    </task>
+    <task workspace="1in">
+      <statement>
+        <p>What is the mass of the remaining liquid?</p>
+      </statement>
+    </task>
+  </exercise>
+
+</worksheet>

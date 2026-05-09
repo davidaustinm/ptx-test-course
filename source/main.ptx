@@ -52,6 +52,8 @@
       <xi:include href="./latex/08-lin-indep.ptx"/>
       <xi:include href="./activities/26-review.ptx"/>
       <xi:include href="./latex/21-SVD-cp.ptx"/>
+      <xi:include href="./latex/19-mass.ptx"/>
+      <xi:include href="./latex/10-int-general.ptx"/>
     
 
       <!-- Add more xi:include files here to include them in the main course -->
