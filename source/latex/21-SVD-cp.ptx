@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <worksheet>
   <title>21 - Singular Value Decomposition (Section 7.4)</title>
   <objectives>
@@ -6,216 +6,176 @@
       <p>Make sure you can answer the following:</p>
     </introduction>
     <ul>
-      <li>How are the singular values of <m>A</m> related to the eigenvalues of  related to the eigenvalues of <m>G=A^TA</m>?  How are the right singular vectors of ?  How are the right singular vectors of <m>A</m> related to the eigenvectors of  related to the eigenvectors of <m>G</m>..</li>
-      <li>How can you find the left singular vectors of <m>A</m>??</li>
-      <li>How can you build the singular value decompostition for any matrix <m>A</m>??</li>
+      <li><p>How are the singular values of <m>A</m> related to the eigenvalues of <m>G=A^TA</m>?  How are the right singular vectors of <m>A</m> related to the eigenvectors of <m>G</m>.</p></li>
+      <li><p>How can you find the left singular vectors of <m>A</m>?</p></li>
+      <li><p>How can you build the singular value decompostition for any matrix <m>A</m>?</p></li>
     </ul>
   </objectives>
   <introduction>
-    <p>\hfill <term>MTH 205</term></p>
-    <p>There will always be a page of Sage cells at <url href="gvsu.edu/s/0Ng">gvsu.edu/s/0Ng</url>..</p>
-    <p>Given any matrix <m>A</m>, we now want to study the function , we now want to study the function <m>f(\xvec) = |A\xvec|</m>, which is not a
-quadratic form. For example, if , which is not a
-quadratic form. For example, if <m>A=\mattwo{2}{0}{0}{-1}</m> then  then <m>f\left(\twovec{x_1}{x_2}\right)=\sqrt{4x_1^2+x_2^2}</m>..</p>
+    <p><term>MTH 205</term></p>
+    <p>There will always be a page of Sage cells at <url href="https://gvsu.edu/s/0Ng">gvsu.edu/s/0Ng</url>.</p>
+    <p>Given any matrix <m>A</m>, we now want to study the function <m>f(\xvec) = |A\xvec|</m>, which is not a
+quadratic form. For example, if <m>A=\mattwo{2}{0}{0}{-1}</m> then <m>f\left(\twovec{x_1}{x_2}\right)=\sqrt{4x_1^2+x_2^2}</m>.</p>
     <p>While <m>f(x)</m> is not a quadratic form, it becomes one if we square it!  That is, 
- is not a quadratic form, it becomes one if we square it!  That is, 
 <md>(f(\xvec))^2 = |A\xvec|^2 = (A\xvec)\cdot (A\xvec) = \xvec \cdot (A^TA\xvec) = q_{A^TA}(\xvec).</md></p>
-    <p>Let <m>G = A^TA</m>; we call ; we call <m>G</m> the "Gram matrix" associated with  the "Gram matrix" associated with <m>A</m>.  Note that .  Note that <m>f(\xvec) = \sqrt{q_G(\xvec)}</m>.
-You will find a figure at .
-You will find a figure at <url href="gvsu.edu/s/0YE">gvsu.edu/s/0YE</url> ("zero Y E") that allows you to select a matrix
- ("zero Y E") that allows you to select a matrix
-<m>A</m> and vary the red vector  and vary the red vector <m>\xvec</m> on the left. You will see the vector  on the left. You will see the vector <m>A\xvec</m> on the right. The height
-of the blue rectangle shows you the value of  on the right. The height
-of the blue rectangle shows you the value of <m>f(\xvec) = |A\xvec|</m>..</p>
+    <p>Let <m>G = A^TA</m>; we call <m>G</m> the "Gram matrix" associated with <m>A</m>.  Note that <m>f(\xvec) = \sqrt{q_G(\xvec)}</m>.</p>
+    <p>You will find a figure at <url href="https://gvsu.edu/s/0YE">gvsu.edu/s/0YE</url> ("zero Y E") that allows you to select a matrix
+<m>A</m> and vary the red vector <m>\xvec</m> on the left. You will see the vector <m>A\xvec</m> on the right. The height
+of the blue rectangle shows you the value of <m>f(\xvec) = |A\xvec|</m>.</p>
   </introduction>
+
   <exercise>
-    <statement>
-      <p>Let’s start with <m>A =\mattwo{1}{2}{-2}{-1}</m>, which is NOT symmetric., which is NOT symmetric.</p>
-    </statement>
-  </exercise>
-  <exercise workspace="1in">
-    <statement>
-      <p>The first <term>{singular value</term>} } <m>\sigma_1</m>
- is the maximum value of 
+    <introduction>
+      <p>Let’s start with <m>A =\mattwo{1}{2}{-2}{-1}</m>, which is NOT symmetric.</p>
+    </introduction>
+    <task workspace="1in">
+      <statement>
+        <p>The first <term>singular value</term> <m>\sigma_1</m>
  is the maximum value of <m>f(\xvec)</m>
- over all unit vectors and an associated 
- over all unit vectors and an associated <term>{right singular vector</term>} } <m>\vvec_1</m>
- is a unit vector describing a direction in which this maximum occurs.
-Use the diagram to find the first singular value 
+ over all unit vectors and an associated <term>right singular vector</term> <m>\vvec_1</m>
  is a unit vector describing a direction in which this maximum occurs.
 Use the diagram to find the first singular value <m>\sigma_1</m>
- and an associated right singular vector 
- and an associated right singular vector <m>\vvec_1</m>..</p>
-    </statement>
-  </exercise>
-  <exercise workspace="1in">
-    <statement>
-      <p>The second <term>{singular value</term>} } <m>\sigma_2</m>
- is the minimum value of 
+ and an associated right singular vector <m>\vvec_1</m>.</p>
+      </statement>
+    </task>
+    <task workspace="1in">
+      <statement>
+        <p>The second <term>singular value</term> <m>\sigma_2</m>
  is the minimum value of <m>f(\xvec)</m>
- over all unit vectors and an associated 
- over all unit vectors and an associated <term>{right singular vector</term>} } <m>\vvec_2</m>
- is a unit vector describing a direction in which this minimum occurs.
-Use the diagram to find the second singular value 
+ over all unit vectors and an associated <term>right singular vector</term> <m>\vvec_2</m>
  is a unit vector describing a direction in which this minimum occurs.
 Use the diagram to find the second singular value <m>\sigma_2</m>
- and an associated right singular vector 
- and an associated right singular vector <m>\vvec_2</m>..</p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>Without using the diagram:  Remember <m>f(\xvec) = \sqrt{q_G(\xvec)}</m> with  with <m>G=A^TA</m>.  Since .  Since <m>G</m> is symmetric, it is orthogonally diagonalizable.  Find  is symmetric, it is orthogonally diagonalizable.  Find <m>G</m> and an orthogonal diagonalization of it. and an orthogonal diagonalization of it.</p>
-    </statement>
-  </exercise>
-  <exercise workspace="1in">
-    <statement>
-      <p>What is the maximum value of the quadratic form <m>q_G(\xvec)</m>
- among all unit vectors and in which direction does it occur? What is the minimum value of 
+ and an associated right singular vector <m>\vvec_2</m>.</p>
+      </statement>
+    </task>
+    <task workspace="1in">
+      <statement>
+        <p>Without using the diagram:  Remember <m>f(\xvec) = \sqrt{q_G(\xvec)}</m> with <m>G=A^TA</m>.  Since <m>G</m> is symmetric, it is orthogonally diagonalizable.  Find <m>G</m> and an orthogonal diagonalization of it.</p>
+      </statement>
+    </task>
+    <task workspace="1in">
+      <statement>
+        <p>What is the maximum value of the quadratic form <m>q_G(\xvec)</m>
  among all unit vectors and in which direction does it occur? What is the minimum value of <m>q_G(\xvec)</m>
- and in which direction does it occur?
  and in which direction does it occur?</p>
-    </statement>
-  </exercise>
-  <exercise workspace="1in">
-    <statement>
-      <p>What is the relationship between the eigenvalues of <m>G</m> and the singular values of  and the singular values of <m>A</m>?  (Recall ?  (Recall <m>f(\xvec)=\sqrt{q_G(\xvec)}</m>.).)</p>
-    </statement>
-  </exercise>
-  <exercise workspace="1in">
-    <statement>
-      <p>What is the relationship between the eigenvectors of the symmetric matrix <m>G</m> and the right singular vectors  and the right singular vectors <m>\vvec_1</m> and  and <m>\vvec_2</m> of  of <m>A</m>??</p>
-    </statement>
-  </exercise>
-  <exercise workspace="1in">
-    <statement>
-      <p>Can we form an orthonormal basis from <m>\vvec_1</m> and  and <m>\vvec_2</m>?  How do we know? (Recall, ?  How do we know? (Recall, <m>G</m> is symmetric...) is symmetric...)</p>
-    </statement>
-  </exercise>
-  <exercise workspace="1in">
-    <statement>
-      <p>Let's introduce something new.  We have <m>\vvec_1</m> and  and <m>\vvec_2</m> which are the  which are the <term>{right singular vectors</term>}.  The }.  The <term>{left singular vectors</term>} } <m>\uvec_1</m> and  and <m>\uvec_2</m> are found from  are found from <m>A\vvec_1 = \sigma_1\uvec_1</m> and  and <m>A\vvec_2 = \sigma_2\uvec_2</m>. (That is, they are unit vectors that point in the direction . (That is, they are unit vectors that point in the direction <m>A\vvec_i</m>) Find the two left singular vectors, ) Find the two left singular vectors, <m>\uvec_1</m> and  and <m>\uvec_2</m>..</p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>Why are <m>\uvec_1</m> and  and <m>\uvec_2</m> unit vectors?  Hint: we know  unit vectors?  Hint: we know <m>f(\vvec_i)=|A\vvec_i| = \sigma_i</m>..</p>
-    </statement>
-  </exercise>
-  <exercise workspace="1in">
-    <statement>
-      <p>Form the matrices:
+      </statement>
+    </task>
+    <task workspace="1in">
+      <statement>
+        <p>What is the relationship between the eigenvalues of <m>G</m> and the singular values of <m>A</m>?  (Recall <m>f(\xvec)=\sqrt{q_G(\xvec)}</m>.)</p>
+      </statement>
+    </task>
+    <task workspace="1in">
+      <statement>
+        <p>What is the relationship between the eigenvectors of the symmetric matrix <m>G</m> and the right singular vectors <m>\vvec_1</m> and <m>\vvec_2</m> of <m>A</m>?</p>
+      </statement>
+    </task>
+    <task workspace="1in">
+      <statement>
+        <p>Can we form an orthonormal basis from <m>\vvec_1</m> and <m>\vvec_2</m>?  How do we know? (Recall, <m>G</m> is symmetric...)</p>
+      </statement>
+    </task>
+    <task workspace="1in">
+      <statement>
+        <p>Let's introduce something new.  We have <m>\vvec_1</m> and <m>\vvec_2</m> which are the <term>right singular vectors</term>.  The <term>left singular vectors</term> <m>\uvec_1</m> and <m>\uvec_2</m> are found from <m>A\vvec_1 = \sigma_1\uvec_1</m> and <m>A\vvec_2 = \sigma_2\uvec_2</m>. (That is, they are unit vectors that point in the direction <m>A\vvec_i</m>) Find the two left singular vectors, <m>\uvec_1</m> and <m>\uvec_2</m>.</p>
+      </statement>
+    </task>
+    <task workspace="1in">
+      <statement>
+        <p>Why are <m>\uvec_1</m> and <m>\uvec_2</m> unit vectors?  Hint: we know <m>f(\vvec_i)=|A\vvec_i| = \sigma_i</m>.</p>
+      </statement>
+    </task>
+    <task workspace="1in">
+      <statement>
+        <p>Form the matrices:
 <md>U = \left[ \uvec_1 \ \ \uvec_2\right], \ \ \ \Sigma = \mattwo{\sigma_1}{0}{0}{\sigma_2}, \ \ \ V = \left[\vvec_1 \ \ \vvec_2\right]</md></p>
-    </statement>
+      </statement>
+    </task>
+    <task workspace="1in">
+      <statement>
+        <p>Explain why <m>AV = U\Sigma</m>.  (<m>\Sigma</m> is the Greek letter "Sigma").</p>
+      </statement>
+    </task>
+    <task workspace="2cm">
+      <statement>
+        <p>Is <m>V</m> an orthogonal matrix (i.e. does it have orthonormal columns)? Then what is the relationship between <m>V^T</m> and <m>V^{-1}</m>?</p>
+      </statement>
+    </task>
+    <task workspace="1in">
+      <statement>
+        <p>Explain why this leads to <m>A=U\Sigma V^T</m>, and verify this relationship holds for this example.</p>
+      </statement>
+    </task>
+    <conclusion>
+      <p>Putting all this together, we have  <term>singular value decomposition</term> of a matrix <m>A</m>:</p>
+      <ul>
+        <li><p>Construct the Gram matrix <m>G=A^TA</m>, and find an orthogonal diagonalization to find eigenvalues <m>\lambda_i</m> with corresponding orthonormal basis of eigenvectors <m>\vvec_i</m>.</p></li>
+        <li><p>The singular values of <m>A</m> are <m>\sigma_i = \sqrt{\lambda_i}</m>.  By convention, they are listed in decreasing order:  <m>\sigma_1 \ge \sigma_2 \ge \ldots</m>.  The right singular vectors are the <m>\vvec_i</m>.</p></li>
+        <li><p>The left singular vectors <m>\uvec_i</m> are found from <m>A\vvec_i = \sigma_i\uvec_i</m>, where <m>\uvec_i</m> are also unit vectors.  (They also form an orthonormal basis!)</p></li>
+      </ul>
+    </conclusion>
   </exercise>
-  <exercise workspace="1in">
-    <statement>
-      <p>Explain why <m>AV = U\Sigma</m>.  (.  (<m>\Sigma</m> is the Greek letter "Sigma"). is the Greek letter "Sigma").</p>
-    </statement>
-  </exercise>
-  <exercise workspace="2cm">
-    <statement>
-      <p>Is <m>V</m> an orthogonal matrix (i.e. does it have orthonormal columns)? Then what is the relationship between  an orthogonal matrix (i.e. does it have orthonormal columns)? Then what is the relationship between <m>V^T</m> and  and <m>V^{-1}</m>??</p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>Explain why this leads to <m>A=U\Sigma V^T</m>, and verify this relationship holds for this example.
 
-
-\end{enumerate}
-
-Putting all this together, we have  , and verify this relationship holds for this example.
-
-
-\end{enumerate}
-
-Putting all this together, we have  <term>{singular value decomposition</term>} of a matrix } of a matrix <m>A</m>:
-\begin{itemize}:
-\begin{itemize}</p>
-    </statement>
-  </exercise>
   <exercise>
-    <statement>
-      <p>Construct the Gram matrix <m>G=A^TA</m>, and find an orthogonal diagonalization to find eigenvalues , and find an orthogonal diagonalization to find eigenvalues <m>\lambda_i</m> with corresponding orthonormal basis of eigenvectors  with corresponding orthonormal basis of eigenvectors <m>\vvec_i</m>..</p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>The singular values of <m>A</m> are  are <m>\sigma_i = \sqrt{\lambda_i}</m>.  By convention, they are listed in decreasing order:  .  By convention, they are listed in decreasing order:  <m>\sigma_1 \ge \sigma_2 \ge \ldots</m>.  The right singular vectors are the .  The right singular vectors are the <m>\vvec_i</m>..</p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>The left singular vectors <m>\uvec_i</m> are found from  are found from <m>A\vvec_i = \sigma_i\uvec_i</m>, where , where <m>\uvec_i</m> are also unit vectors.  (They also form an orthonormal basis!)  
-\end{itemize} are also unit vectors.  (They also form an orthonormal basis!)  
-\end{itemize}</p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>Consider &lt;m&gt;A = \left[\begin{array}{rrr}
-     1&amp;0&amp;-1  \\
-     1&amp;1&amp;1 
-\end{array}\right]&lt;/m&gt;.  (Not square!  No eigenvalues!)</p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>Construct the Gram matrix <m>G=A^TA</m> and find it's orthogonal diagonalization. and find it's orthogonal diagonalization.</p>
-    </statement>
-  </exercise>
-  <exercise workspace="1in">
-    <statement>
-      <p>In building the singular value decomposition, the matrices &lt;m&gt;U&lt;/m&gt; and &lt;m&gt;V&lt;/m&gt; will always be
-orthogonal matrices so they must be square. The matrix &lt;m&gt;\Sigma&lt;/m&gt; will always have the
-same shape as &lt;m&gt;A&lt;/m&gt;; in this case, &lt;m&gt;\Sigma&lt;/m&gt; will be &lt;m&gt;2\times 3&lt;/m&gt;. Find the singular values &lt;m&gt;\sigma_1&lt;/m&gt; and &lt;m&gt;\sigma_2&lt;/m&gt; of
-&lt;m&gt;A&lt;/m&gt; and form &lt;m&gt;\Sigma = \left[\begin{array}{rrr}
-     \sigma_1&amp;0&amp;0  \\
-     0&amp;\sigma_2&amp;0 
-\end{array}\right]&lt;/m&gt;.</p>
-    </statement>
-  </exercise>
-  <exercise workspace="1in">
-    <statement>
-      <p>Identify three right singular vectors <m>\vvec_1</m>, , <m>\vvec_2</m>, and , and <m>\vvec_3</m> and form the matrix  and form the matrix <m>V</m> having
-these vectors as its columns. having
+    <introduction>
+      <p>Consider <m>A = \left[\begin{array}{rrr}
+     1\amp0\amp-1  \\
+     1\amp1\amp1 
+\end{array}\right]</m>.  (Not square!  No eigenvalues!)</p>
+    </introduction>
+    <task workspace="1in">
+      <statement>
+        <p>Construct the Gram matrix <m>G=A^TA</m> and find it's orthogonal diagonalization.</p>
+      </statement>
+    </task>
+    <task workspace="1in">
+      <statement>
+        <p>In building the singular value decomposition, the matrices <m>U</m> and <m>V</m> will always be
+orthogonal matrices so they must be square. The matrix <m>\Sigma</m> will always have the
+same shape as <m>A</m>; in this case, <m>\Sigma</m> will be <m>2\times 3</m>. Find the singular values <m>\sigma_1</m> and <m>\sigma_2</m> of
+<m>A</m> and form <m>\Sigma = \left[\begin{array}{rrr}
+     \sigma_1\amp0\amp0  \\
+     0\amp\sigma_2\amp0 
+\end{array}\right]</m>.</p>
+      </statement>
+    </task>
+    <task workspace="1in">
+      <statement>
+        <p>Identify three right singular vectors <m>\vvec_1</m>, <m>\vvec_2</m>, and <m>\vvec_3</m> and form the matrix <m>V</m> having
 these vectors as its columns.</p>
-    </statement>
-  </exercise>
-  <exercise workspace="1in">
-    <statement>
-      <p>We now need to form the left singular vectors. If we want <m>A = U\Sigma V^T</m>, then the
-matrix product , then the
+      </statement>
+    </task>
+    <task workspace="1in">
+      <statement>
+        <p>We now need to form the left singular vectors. If we want <m>A = U\Sigma V^T</m>, then the
 matrix product <m>U\Sigma</m> needs to make sense. This means that the number of columns of
- needs to make sense. This means that the number of columns of
-<m>U</m> equals the number of rows of  equals the number of rows of <m>\Sigma</m>, which is 2. Therefore , which is 2. Therefore <m>U</m> should be a  should be a <m>2\times 2</m> matrix.
-Find left singular vectors using  matrix.
-Find left singular vectors using <m>A\vvec_i = \sigma_i\uvec_i</m>..</p>
-    </statement>
+<m>U</m> equals the number of rows of <m>\Sigma</m>, which is 2. Therefore <m>U</m> should be a <m>2\times 2</m> matrix.
+Find left singular vectors using <m>A\vvec_i = \sigma_i\uvec_i</m>.</p>
+      </statement>
+    </task>
+    <task workspace="1in">
+      <statement>
+        <p>Form the matrix <m>U =\left[\uvec_1 \ \  \uvec_2\right]</m>. Then verify that <m>A=U\Sigma V^T</m>.</p>
+      </statement>
+    </task>
+    <task workspace="1in">
+      <statement>
+        <p>How can you use this singular value decomposition of <m>A</m>
+ to easily find a singular value decomposition of <m>A^T=\left[\begin{array}{rr}
+      1\amp1  \\
+      0\amp1\\ -1\amp1 
+ \end{array}\right]</m>.</p>
+      </statement>
+    </task>
   </exercise>
-  <exercise workspace="1in">
-    <statement>
-      <p>Form the matrix <m>U =\left[\uvec_1 \ \  \uvec_2\right]</m>. Then verify that . Then verify that <m>A=U\Sigma V^T</m>..</p>
-    </statement>
-  </exercise>
+
   <exercise>
     <statement>
-      <p>How can you use this singular value decomposition of &lt;m&gt;A&lt;/m&gt;
- to easily find a singular value decomposition of &lt;m&gt;A^T=\left[\begin{array}{rr}
-      1&amp;1  \\
-      0&amp;1\\ -1&amp;1 
- \end{array}\right]&lt;/m&gt;.
- 
-\end{enumerate}</p>
+      <p>(If time): Find the singular value decomposition for <m>A=\left[\begin{array}{rrr}
+     2\amp-2\amp1  \\
+     -4\amp-8 \amp-8
+\end{array}\right]</m> and verify that <m>A=U\Sigma V^T</m>.</p>
     </statement>
   </exercise>
-  <exercise>
-    <statement>
-      <p>(If time): Find the singular value decomposition for &lt;m&gt;A=\left[\begin{array}{rrr}
-     2&amp;-2&amp;1  \\
-     -4&amp;-8 &amp;-8
-\end{array}\right]&lt;/m&gt; and verify that &lt;m&gt;A=U\Sigma V^T&lt;/m&gt;.</p>
-    </statement>
-  </exercise>
+
 </worksheet>
